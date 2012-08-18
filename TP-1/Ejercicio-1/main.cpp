@@ -1,29 +1,49 @@
 #include <iostream>
 using namespace std;
 
-#define MAX 31
-#define MENSAJE "Ingrese un caracter, para finalizar ingrese 0:"
+#define MAX 30
+#define MSGINGRESO "Ingrese un caracter, para finalizar ingrese 0:"
+#define MSGSHOW "La cadena al reves es:"
+
+void ingreso(char *&puntero, int &cantidad);
+void mostrar(char *&puntero, int cantidad);
+void liberar(char *&puntero);
 
 void main(){
-	char *pvec = new char[MAX];
+	char *pvec = new char[MAX+1];
 	int cant = 0;
-	
-	cout << MENSAJE << endl;
-	cin >> *pvec;
 
-	while (*pvec != '0'){
-		cant++;
-		*pvec++;
-		cout << MENSAJE << endl;
-		cin >> *pvec;
+	ingreso(pvec, cant);
+	
+	mostrar(pvec, cant);
+
+	liberar(pvec);
+}
+
+void ingreso(char *&puntero, int &cantidad){
+	cout << MSGINGRESO << endl;
+	cin >> *puntero;
+
+	while (*puntero != '0' && cantidad < MAX){
+		cantidad++;
+		*puntero++;
+		cout << MSGINGRESO << endl;
+		cin >> *puntero;
 	}
 
-	*pvec = '\0';
-	
-	for (int i = 0; i < cant; i++){
-		pvec--;
-		cout << *pvec << endl; 
-	}
+	*puntero = '\0';
+}
 
-	delete [] pvec;
+void mostrar(char *&puntero, int cantidad){
+	system("cls");
+	cout << MSGSHOW << endl;
+
+	for (int i = 0; i < cantidad; i++){
+		puntero--;
+		cout << *puntero << endl; 
+	}	
+}
+
+void liberar(char *&puntero){
+	delete [] puntero;
 }
