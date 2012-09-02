@@ -45,7 +45,7 @@ void Pila::push(char dato) {
 		*_tope = dato;
 		//*_aux = *_tope;
 		_tope++;
-		//*_tope = '\0';
+		*_tope = '\0';
 	}
 }
 
@@ -54,7 +54,7 @@ char Pila::pop() {
 		_tope--;
 		_cant--;	
 		char aux = *_tope;
-		//*_tope = '\0';
+		*_tope = '\0';
 		//*_aux = *(_tope - 1);		
 		return aux;
 	}else{
