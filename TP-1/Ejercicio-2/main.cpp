@@ -8,81 +8,75 @@ using namespace std;
 class Pila{
 private:
 	char* _tope; // elemento a apilar
-	//char* _aux;
 	int _cant; // cantidad de elementos de la pila
 	int _max; // cantidad maxima de elementos de la pila
+	char *_primero; // apunta al primer elemento de la pila
 
 public:
-	Pila(){ Pila(0); } // constructor por defecto
+	Pila(); // constructor por defecto
 	Pila(int max); // constructor parametrizado recibe la cant maxima de la pila
 	~Pila(); // destructor
-	void push(char dato); // apila un elemento
-	char pop( ); // desapila un elemento y lo devuelve
+	bool push(char dato); // apila un elemento
+	bool pop(char &dato); // desapila un elemento y lo devuelve
 	bool empty( ); // indica si esta vacia la pila
 	bool full( ); // indica si esta llena la pila
 	int getCant(){ return _cant;} //devuelve cant. de elementos actuales en la pila
 };
 
+Pila::Pila() {
+	_max=0;
+	_cant=0;
+	char* first = new char[_max];
+	_tope = first;
+}
+
 Pila::Pila(int max) {
 	_max = max;
-	_cant = 0;
-	_tope = new char[max+1];
-	//*_tope = '\0';
-	//_aux = new char;
-	//*_aux = *_tope;
+	_cant = 0; 
+	_primero = new char[_max];
+	_tope = _primero;
 }
 
-Pila::~Pila() {
-	while (!empty()){
-		char* c = (char*)pop();
-		delete c;
+Pila::~Pila(){
+	if(_tope){
+		delete[] _primero;
 	}
 }
 
-void Pila::push(char dato) {
-	if (!full()){
+bool Pila::push(char dato) {
+	if(!full()){
 		_cant++;
 		*_tope = dato;
-		//*_aux = *_tope;
 		_tope++;
-		*_tope = '\0';
+		return true;
+	}else{
+		return false;
 	}
 }
 
-char Pila::pop() {
-	if (!empty()){
+bool Pila::pop(char &dato) {
+	if(!empty()){
+		_cant--;
 		_tope--;
-		_cant--;	
-		char aux = *_tope;
-		*_tope = '\0';
-		//*_aux = *(_tope - 1);		
-		return aux;
+		dato = *_tope;
+		return true;
 	}else{
-		return NULL;
+		return false;
 	}
 }
 
 bool Pila::empty() {
-	return (_tope != NULL);
+	return (_tope == _primero);
 }
 
 bool Pila::full() {
-	char* aux = new char;
-	if (!aux) {
-		return false;	// No hay mas memoria disponible
-	} else {
-		delete aux;
-		if (_max != 0) {
-			return (getCant() == _max);
-		} else {
-			return false;
-		}
-	}
+	return (_tope == (_primero + _max));
 }
 
 void main(){
 	char* ingreso = new char;
-	Pila pila(MAX);
+	char letra;
+	Pila pila(MAX+1);
 
 	cout << MSGINGRESO << endl;
 	cin.getline(ingreso, MAX+1);
@@ -96,6 +90,9 @@ void main(){
 	cout << MSGSHOW << endl;
 
 	while(!pila.empty()){
-		cout << pila.pop(); 
+		pila.pop(letra);
+		cout << letra; 
 	}
+
+	cin.get();
 }
