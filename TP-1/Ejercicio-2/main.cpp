@@ -26,8 +26,8 @@ public:
 Pila::Pila() {
 	_max=0;
 	_cant=0;
-	char* first = new char[_max];
-	_tope = first;
+	_primero = new char[_max];
+	_tope = _primero;
 }
 
 Pila::Pila(int max) {
@@ -76,14 +76,14 @@ bool Pila::full() {
 void main(){
 	char* ingreso = new char;
 	char letra;
-	Pila pila(MAX+1);
+	Pila pila(MAX);
 
 	cout << MSGINGRESO << endl;
-	cin.getline(ingreso, MAX+1);
+	cin.getline(ingreso, MAX);
 
 	while (*ingreso != '\0'){
 		pila.push(*ingreso);
-		*ingreso++;
+		ingreso++;
 	}
 
 	system("cls");
