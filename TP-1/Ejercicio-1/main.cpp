@@ -6,23 +6,23 @@ using namespace std;
 #define MSGSHOW "La cadena al reves es:"
 
 void main(){
-	char *pvec = new char[MAX+1];
+	char *pvec = new char[MAX];
 	char *aux = pvec;
 
 	cout << MSGINGRESO << endl;
-	cin.getline(pvec, MAX+1);
+	cin.getline(pvec, MAX);
 
 	while (*pvec != '\0'){
-		*pvec++;
+		pvec++;
 	}
 
 	system("cls");
 	cout << MSGSHOW << endl;
 
-	*pvec--;
+	pvec--;
 	while (pvec != aux){ 
 		cout << *pvec; 
-		*pvec--;
+		pvec--;
 	}
 	cout << *pvec; 
 
