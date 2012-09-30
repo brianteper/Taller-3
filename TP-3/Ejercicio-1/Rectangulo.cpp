@@ -9,20 +9,20 @@ int Rectangulo::getX1() {
 	return _x1;
 }
 
-void Rectangulo::setX2(int x){
-	_x2 = x;
-}
-
-int Rectangulo::getX2() {
-	return _x2;
-}
-
 void Rectangulo::setY1(int y){
 	_y1 = y;
 }
 
 int Rectangulo::getY1() {
 	return _y1;
+}
+
+void Rectangulo::setX2(int x){
+	_x2 = x;
+}
+
+int Rectangulo::getX2() {
+	return _x2;
 }
 
 void Rectangulo::setY2(int y){
@@ -45,11 +45,11 @@ void Rectangulo::dibujar(){
 	rectangle(_x1,_y1,_x2,_y2);
 }
 
-Rectangulo::~Rectangulo(void)
+Rectangulo::~Rectangulo()
 {
 }
 
-Rectangulo::Rectangulo(void)
+Rectangulo::Rectangulo()
 {
 	_y1=0;
 	_x2=0;

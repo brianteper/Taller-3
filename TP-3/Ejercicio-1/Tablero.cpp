@@ -1,8 +1,8 @@
 #include "Tablero.h"
 #include "graphics.h"
 
-Tablero::Tablero(void){
-	_cir = new Circulo(50,50,30);
+Tablero::Tablero(){
+	_circ = new Circulo(50,50,30);
 	strcpy(_cadena, "Tablero");
 	int x1=100;
 	int y1=100;
@@ -22,7 +22,7 @@ Tablero::Tablero(void){
 }
 
 Tablero::Tablero(char *cad){
-	_cir = new Circulo(50,50,25);
+	_circ = new Circulo(50,50,25);
 	strcpy(_cadena, cad);
 	int x1=100;
 	int y1=100;
@@ -41,22 +41,29 @@ Tablero::Tablero(char *cad){
 	}
 }
 
-void Tablero::dibujarT(){
-	_cir->dibujar();
-	outtextxy(100,50,_cadena);
+void Tablero::dibujarTablero(){
+	_circ->dibujar();
+	outtextxy(45,40,"A");
+	outtextxy(170,50,_cadena);
 	for(int i = 0; i < TOPE; i++){
 		for(int j = 0; j < TOPE; j++){
-			if(_rec[i][j])_rec[i][j]->dibujar();
+			if(_rec[i][j]){
+				_rec[i][j]->dibujar();
+			}
 		}
 	}
 }
 
-Tablero::~Tablero(void)
+Tablero::~Tablero()
 {
-	if(_cir)delete _cir;
+	if(_circ){
+		delete _circ;
+	}
 	for(int i = 0; i < TOPE; i++){
 		for(int j = 0; j < TOPE; j++){
-			if(_rec[i][j]) delete _rec[i][j];
+			if(_rec[i][j]){
+				delete _rec[i][j];
+			}
 		}
 	}
 }

@@ -23,27 +23,26 @@ void Circulo::setRadio(float radio){
 
 float Circulo::getRadio() {
 	return _radio;
-
 }
 
 void Circulo::dibujar(){
 	circle(getX(),getY(),getRadio());
 }
 
-Circulo::~Circulo(void)
+Circulo::~Circulo()
 {
 }
 
-Circulo::Circulo(void)
+Circulo::Circulo()
 {
-	 _x=0;
-	 _y=0;
-	 _radio=0;
+	_x=0;
+	_y=0;
+	_radio=0;
 }
 
-Circulo::Circulo(int x, int y, float r){
+Circulo::Circulo(int x, int y, float radio){
 	setX(x);
 	setY(y);
-	setRadio(r);
+	setRadio(radio);
 }
 

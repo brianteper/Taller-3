@@ -5,10 +5,10 @@
 using namespace std;
 
 void main( ){
-		initwindow(800, 600, "Tablero");
-		Tablero t("Mi super tablero");
-		t.dibujarT();
-		refreshallbgi();
-		cin.get();
-		closegraph();
+	initwindow(800, 700, "Tablero"); //Medidas para que se vea todo el tablero
+	Tablero t("Tablero");
+	t.dibujarTablero();
+	refreshallbgi();
+	cin.get();
+	closegraph();
 }

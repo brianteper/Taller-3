@@ -6,13 +6,13 @@
 class Tablero{
 private:
 	char _cadena[20];
-	Circulo *_cir;
+	Circulo *_circ;
 	Rectangulo *_rec[TOPE][TOPE];
 public:
-	Tablero(void);
+	Tablero();
 	Tablero(char *cad);
-	~Tablero(void);
-	void dibujarT();
-};//fin clase
+	~Tablero();
+	void dibujarTablero();
+};
 
 #endif 

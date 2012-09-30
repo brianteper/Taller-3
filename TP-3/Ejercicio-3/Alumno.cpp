@@ -1,6 +1,6 @@
 #include "Alumno.h"
 
-Alumno::Alumno(void)
+Alumno::Alumno()
 {
 	_curso=0;
 	_num_asignaturas=0;
@@ -14,13 +14,13 @@ Alumno::Alumno(const char *nombre, int edad, char estadocivil, int curso,
 	strcpy(_estado,estado);
 }
 
-Alumno::~Alumno(void)
+Alumno::~Alumno()
 {
 }
 
 void Alumno::verTodo(){
 	Persona::verTodo();
-	cout<<"Curso: "<<_curso<<endl;
-	cout<<"Numero de asignaturas: "<<_num_asignaturas<<endl;
-	cout<<"Estado: "<<_estado<<endl;
+	cout << "Curso: " << _curso << endl;
+	cout << "Numero de asignaturas: " << _num_asignaturas << endl;
+	cout << "Estado: " << _estado << endl;
 }

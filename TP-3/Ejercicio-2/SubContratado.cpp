@@ -1,7 +1,7 @@
 #include "SubContratado.h"
 #include "Empleado.h"
 
-SubContratado::SubContratado(void){
+SubContratado::SubContratado(){
 	_tarifa = 0.0;
 	_nroHoras = 0.0;
 }
@@ -11,17 +11,16 @@ SubContratado::SubContratado(const char *nombre, float tarifa, float nroHoras):E
 	setHoras(nroHoras);
 }
 
-SubContratado::~SubContratado(void)
+SubContratado::~SubContratado()
 {
 }
 
 void SubContratado::verTodo(){
 	Empleado::verTodo();
-	cout<<"Horas trabajadas: "<<_nroHoras<<endl;
-	cout<<"Tarifa: "<<_tarifa<<endl;
-	//cout<<"Sueldo: "<<calcularPago()<<endl;
+	cout << "Horas Trabajadas: " << _nroHoras << endl;
+	cout << "Tarifa: " << _tarifa << endl;
 }
 
 float SubContratado::calcularPago(){
-	return _tarifa*_nroHoras;
+	return (_tarifa * _nroHoras);
 }

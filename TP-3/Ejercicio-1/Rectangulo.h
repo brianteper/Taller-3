@@ -1,17 +1,16 @@
 #ifndef RECTANGULO_H 
 #define RECTANGULO_H 
-//#include "graphics.h"
-class Rectangulo{
 
+class Rectangulo{
 private:
+	int _x1;
 	int _y1;
 	int _x2;
 	int _y2;
-	int _x1;
 	int _ancho;
 	int _alto;
 public:
-	Rectangulo(void);
+	Rectangulo();
 	Rectangulo(int x1,int y1, int x2, int y2);
 	void setX1(int x);
 	int getX1();
@@ -24,7 +23,7 @@ public:
 	int getAncho();
 	int getAlto();
 	void dibujar();
-	~Rectangulo(void);
-};//fin clase
+	~Rectangulo();
+};
 
 #endif

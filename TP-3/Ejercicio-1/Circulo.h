@@ -16,8 +16,7 @@ public:
 	void setRadio(float radio);
 	float getRadio();
 	void dibujar();
-	~Circulo(void);
-
-};//fin clase
+	~Circulo();
+};
 
 #endif

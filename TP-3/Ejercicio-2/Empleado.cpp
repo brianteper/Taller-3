@@ -1,6 +1,6 @@
 #include "Empleado.h"
 
-Empleado::Empleado(void){
+Empleado::Empleado(){
 	strcpy(_nombre,"\0");
 }
 
@@ -8,7 +8,7 @@ Empleado::Empleado(const char *nombre){
 	strcpy(_nombre,nombre);
 }
 
-Empleado::~Empleado(void){
+Empleado::~Empleado(){
 }
 
 void Empleado::setNombre(const char *nombre){

@@ -5,16 +5,15 @@
 #include "Profesor.h"
 #define MAX 50
 
-class Curso
-{
+class Curso {
 private:
 	Persona *_vec[MAX];
 	int _opcion;
-	void GenerarMenu();
-	int ObtenerOpcion();
+	void generarMenu();
+	int obtenerOpcion();
 public:
-	Curso(void);
-	~Curso(void);
+	Curso();
+	~Curso();
 	void Procesar();
 };
 
