@@ -8,6 +8,9 @@ Tablero::Tablero(){
 	int y1=100;
 	int x2=170;
 	int y2=170;
+
+	outtextxy(45,40,"A");
+
 	for(int i = 0; i < TOPE; i++){
 		for(int j = 0; j < TOPE; j++){
 			_rec[i][j] = new Rectangulo(x1,y1,x2,y2);
@@ -28,6 +31,9 @@ Tablero::Tablero(char *cad){
 	int y1=100;
 	int x2=170;
 	int y2=170;
+
+	outtextxy(45,40,"A");
+
 	for(int i = 0; i < TOPE; i++){
 		for(int j = 0; j < TOPE; j++){
 			_rec[i][j] = new Rectangulo(x1,y1,x2,y2);
@@ -43,8 +49,25 @@ Tablero::Tablero(char *cad){
 
 void Tablero::dibujarTablero(){
 	_circ->dibujar();
-	outtextxy(45,40,"A");
-	outtextxy(170,50,_cadena);
+	
+	char _cad[3]="";
+	char _cadn[3]="";
+	int xt=125;
+	int yt=70;
+
+	_cad[0]='A';
+	_cadn[0]='1';
+
+	for(int i=0;i<TOPE;i++){
+		outtextxy(xt,yt,_cad);
+		outtextxy(yt,xt,_cadn);
+		_cad[0]++;
+		_cadn[0]++;
+		xt=xt+72;
+	}
+
+	outtextxy(100,30,_cadena);
+
 	for(int i = 0; i < TOPE; i++){
 		for(int j = 0; j < TOPE; j++){
 			if(_rec[i][j]){

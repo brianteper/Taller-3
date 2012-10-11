@@ -9,6 +9,7 @@ private:
 public:
 	Circulo(void);
 	Circulo(int x, int y,float radio);
+	~Circulo();
 	void setX(int x);
 	int getX();
 	void setY(int y);
@@ -16,7 +17,6 @@ public:
 	void setRadio(float radio);
 	float getRadio();
 	void dibujar();
-	~Circulo();
 };
 
 #endif

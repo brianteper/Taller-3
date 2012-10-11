@@ -26,7 +26,7 @@ float Circulo::getRadio() {
 }
 
 void Circulo::dibujar(){
-	circle(getX(),getY(),getRadio());
+	circle(_x, _y, _radio);
 }
 
 Circulo::~Circulo()
@@ -41,8 +41,8 @@ Circulo::Circulo()
 }
 
 Circulo::Circulo(int x, int y, float radio){
-	setX(x);
-	setY(y);
-	setRadio(radio);
+	_x=x;
+	_y=y;
+	_radio= radio;
 }
 

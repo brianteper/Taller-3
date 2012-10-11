@@ -12,6 +12,7 @@ private:
 public:
 	Rectangulo();
 	Rectangulo(int x1,int y1, int x2, int y2);
+	~Rectangulo();
 	void setX1(int x);
 	int getX1();
 	void setY1(int y);
@@ -23,7 +24,6 @@ public:
 	int getAncho();
 	int getAlto();
 	void dibujar();
-	~Rectangulo();
 };
 
 #endif
