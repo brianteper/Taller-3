@@ -7,7 +7,7 @@ private:
 	int _y;
 	float _radio;
 public:
-	Circulo(void);
+	Circulo();
 	Circulo(int x, int y,float radio);
 	~Circulo();
 	void setX(int x);

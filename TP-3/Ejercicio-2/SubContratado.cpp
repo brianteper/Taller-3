@@ -19,6 +19,7 @@ void SubContratado::verTodo(){
 	Empleado::verTodo();
 	cout << "Horas Trabajadas: " << _nroHoras << endl;
 	cout << "Tarifa: " << _tarifa << endl;
+	cout << "Sueldo Mensual: " << calcularPago() << endl;
 }
 
 float SubContratado::calcularPago(){

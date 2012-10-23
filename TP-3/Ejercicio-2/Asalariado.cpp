@@ -15,5 +15,6 @@ Asalariado::~Asalariado()
 
 void Asalariado::verTodo(){
 	Empleado::verTodo();
+	cout << "Sueldo Mensual: " << calcularPago() << endl;
 }
 

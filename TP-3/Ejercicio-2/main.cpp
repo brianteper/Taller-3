@@ -19,7 +19,7 @@ void main(){
 	for(int i=0;i<5;i++){
 		if(vec[i]){
 			vec[i]->verTodo();
-			cout << "Sueldo Mensual: " << vec[i]->calcularPago() << endl << endl;
+			cout << endl;
 		}
 	}
 	

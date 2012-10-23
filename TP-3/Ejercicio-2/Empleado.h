@@ -14,7 +14,7 @@ public:
 	void setNombre(const char *nombre);
 	const char* getNombre();
 	virtual float calcularPago()=0;
-	virtual void verTodo(){cout << "Nombre: "<<_nombre<<endl;}
+	virtual void verTodo(){cout << "Nombre: " << _nombre << endl;}
 };
 
 #endif
