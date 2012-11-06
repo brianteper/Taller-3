@@ -13,6 +13,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camino.h" />
+    <ClInclude Include="Interfaz.h" />
+    <ClInclude Include="Laberinto.h" />
+    <ClInclude Include="Pared.h" />
+    <ClInclude Include="Posicion.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CAC33BE9-D516-4E1C-9C38-422B031EA2C9}</ProjectGuid>
     <RootNamespace>TrabajoPracticoFinal</RootNamespace>

@@ -19,4 +19,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Interfaz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pared.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Posicion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Laberinto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
