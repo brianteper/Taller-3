@@ -39,6 +39,7 @@ void Interfaz::Menu()
 		cout<<"3. Para guardar el laberinto generado(luego de haber generado un laberinto).\n";
 		cout<<"4. Para salir.\n";
 		cout<<"Ingrese una opcion:";
+
 		cin>>_opcion;
 		switch(_opcion)
 		{
@@ -69,9 +70,7 @@ void Interfaz::SubMenu()
 		{
 			if(_opcion=='1')
 			{
-				_arch->AbrirArchLectura(_ArchE);
-				_arch->parser(_ArchE,_mapaTexto);
-				_arch->CerrarArch(_ArchE);
+				Leer();
 				_lab->CargarFijo(_lab, _mapaTexto);
 				_lab->Recorrer(_opcion2);
 			}
@@ -98,5 +97,7 @@ void Interfaz::Guardar(){
 }
 
 void Interfaz::Leer(){
-
+	_arch->AbrirArchLectura(_ArchE);
+	_arch->Parser(_ArchE,_mapaTexto);
+	_arch->CerrarArch(_ArchE);
 }

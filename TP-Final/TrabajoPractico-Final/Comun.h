@@ -18,7 +18,7 @@ using namespace std;
 #define LADO			15
 #define RADIO			4
 #define MAXLINEA 		255
-#define TITULO			"El juego del laberinto"
+#define TITULO			"Laberinto"
 #define randomize() (srand( (unsigned)time( NULL )) )
 #define random(range) (rand() % (range))
 

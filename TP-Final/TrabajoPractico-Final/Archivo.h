@@ -1,12 +1,15 @@
+#ifndef ARCHIVO_H
+#define ARCHIVO_H
+
 #include "Comun.h"
 
 class Archivo
 {
 private:
-	char 		*_token;
-	char 		*_linea;
-	int 		_c;
-	int			_f;
+	char *_token;
+	char *_linea;
+	int _c;
+	int	_f;
 
 public:
 	Archivo();
@@ -14,5 +17,7 @@ public:
 	int AbrirArchLectura(FILE *&Arch);
 	int AbrirArchEscritura(FILE *&Arch);
 	void CerrarArch(FILE *&Arch);
-	void parser(FILE*&Arch,int mapaTexto[][ANCHO_LAB]);
+	void Parser(FILE*&Arch,int mapaTexto[][ANCHO_LAB]);
 };
+
+#endif

@@ -49,7 +49,7 @@ void Archivo::CerrarArch(FILE*&Arch)
 	fclose(Arch);
 }
 
-void Archivo::parser(FILE*&Arch,int mapaTexto[][ANCHO_LAB])
+void Archivo::Parser(FILE*&Arch,int mapaTexto[][ANCHO_LAB])
 {
 	fgets(_linea,MAXLINEA,Arch);
 	while (!feof(Arch))
