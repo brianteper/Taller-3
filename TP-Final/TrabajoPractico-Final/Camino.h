@@ -12,7 +12,7 @@ private:
 	int _yInicial;
 	Circulo *_pc;
 public:
-	Camino(Laberinto* _lab, int _x, int _y);
+	Camino(Laberinto* lab, int x, int y);
 	~Camino();
 	void CambiarEstado(Estado nuevoEstado);
 	void Dibujar();

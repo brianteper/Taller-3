@@ -2,7 +2,7 @@
 #include "Circulo.h"
 #include "graphics.h"
 
-Camino::Camino(Laberinto* _lab, int _x, int _y):Posicion(_lab, _x, _y){
+Camino::Camino(Laberinto* lab, int x, int y):Posicion(lab, x, y){
 	_estado = LIBRE;
 	_xInicial = 18;
 	_yInicial = 88;

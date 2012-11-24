@@ -1,3 +1,6 @@
+#ifndef COMUN_H
+#define COMUN_H
+
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -20,3 +23,5 @@ using namespace std;
 #define random(range) (rand() % (range))
 
 enum Estado { LIBRE=0, VISITADO, DESCARTADO };
+
+#endif

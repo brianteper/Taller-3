@@ -4,9 +4,9 @@
 class Laberinto;
 class Posicion {
 private:
-	Laberinto* lab;
-	int x;
-	int y;
+	Laberinto* _lab;
+	int _x;
+	int _y;
 public:
 	Posicion(Laberinto* _lab, int _x, int _y);
 	virtual void Dibujar() = 0;

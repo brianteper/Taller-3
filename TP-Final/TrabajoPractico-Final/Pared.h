@@ -13,7 +13,7 @@ private:
 	int _right; 
 	int _bottom;
 public:
-	Pared(Laberinto* _lab, int _x, int _y);
+	Pared(Laberinto* lab, int x, int y);
 	~Pared();
 	void Dibujar();
 	bool esValida();

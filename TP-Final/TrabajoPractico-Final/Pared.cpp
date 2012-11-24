@@ -1,6 +1,6 @@
 #include "Pared.h"
 
-Pared::Pared(Laberinto* _lab, int _x, int _y):Posicion(_lab, _x, _y){
+Pared::Pared(Laberinto* lab, int x, int y):Posicion(lab, x, y){
 	setcolor(BROWN);
 	setfillstyle(9, BROWN);
 	_left=10;

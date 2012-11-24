@@ -5,9 +5,6 @@ using namespace std;
 
 void main()
 {
-	Interfaz* interfaz = new Interfaz();
-	delete interfaz;
-	refreshallbgi();
-	closegraph();
+	Interfaz i;
 	getchar();
 }

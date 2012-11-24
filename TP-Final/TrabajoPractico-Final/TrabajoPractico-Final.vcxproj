@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Archivo.cpp" />
     <ClCompile Include="bgiout.cxx" />
     <ClCompile Include="Camino.cpp" />
     <ClCompile Include="Circulo.cpp" />
@@ -21,6 +22,7 @@
     <ClCompile Include="Laberinto.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="misc.cxx" />
+    <ClCompile Include="Modograf.cpp" />
     <ClCompile Include="mouse.cxx" />
     <ClCompile Include="Posicion.cpp" />
     <ClCompile Include="palette.cxx" />
@@ -31,6 +33,7 @@
     <ClCompile Include="winthread.cxx" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Archivo.h" />
     <ClInclude Include="Camino.h" />
     <ClInclude Include="Circulo.h" />
     <ClInclude Include="Comun.h" />
@@ -39,6 +42,7 @@
     <ClInclude Include="graphics.h" />
     <ClInclude Include="Interfaz.h" />
     <ClInclude Include="Laberinto.h" />
+    <ClInclude Include="Modograf.h" />
     <ClInclude Include="Pared.h" />
     <ClInclude Include="Posicion.h" />
     <ClInclude Include="Rectangulo.h" />

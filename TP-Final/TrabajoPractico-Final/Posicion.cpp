@@ -1,17 +1,16 @@
 #include "Posicion.h"
 #include "Laberinto.h"
 
-class Laberinto;
-Posicion::Posicion(Laberinto* _lab, int _x, int _y){
-	lab = _lab;
-	x = _x;
-	y = _y;
+Posicion::Posicion(Laberinto* lab, int x, int y){
+	_lab = lab;
+	_x = x;
+	_y = y;
 }
 
 int Posicion::getX(){
-	return x;
+	return _x;
 }
 
 int Posicion::getY(){
-	return y;
+	return _y;
 }
