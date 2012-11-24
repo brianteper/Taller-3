@@ -11,14 +11,41 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bgiout.cxx" />
+    <ClCompile Include="Camino.cpp" />
+    <ClCompile Include="Circulo.cpp" />
+    <ClCompile Include="dibutil.cxx" />
+    <ClCompile Include="drawing.cxx" />
+    <ClCompile Include="file.cxx" />
+    <ClCompile Include="Interfaz.cpp" />
+    <ClCompile Include="Laberinto.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="misc.cxx" />
+    <ClCompile Include="mouse.cxx" />
+    <ClCompile Include="Posicion.cpp" />
+    <ClCompile Include="palette.cxx" />
+    <ClCompile Include="Pared.cpp" />
+    <ClCompile Include="Rectangulo.cpp" />
+    <ClCompile Include="Tablero.cpp" />
+    <ClCompile Include="text.cxx" />
+    <ClCompile Include="winbgi.cxx" />
+    <ClCompile Include="winthread.cxx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camino.h" />
+    <ClInclude Include="Circulo.h" />
+    <ClInclude Include="dibapi.h" />
+    <ClInclude Include="dibutil.h" />
+    <ClInclude Include="graphics.h" />
     <ClInclude Include="Interfaz.h" />
     <ClInclude Include="Laberinto.h" />
     <ClInclude Include="Pared.h" />
     <ClInclude Include="Posicion.h" />
+    <ClInclude Include="Rectangulo.h" />
+    <ClInclude Include="Tablero.h" />
+    <ClInclude Include="winbgi.h" />
+    <ClInclude Include="winbgim.h" />
+    <ClInclude Include="winbgitypes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CAC33BE9-D516-4E1C-9C38-422B031EA2C9}</ProjectGuid>

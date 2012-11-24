@@ -1,6 +1,7 @@
 #ifndef POSICION_H
 #define POSICION_H
 
+class Laberinto;
 class Posicion {
 private:
 	Laberinto* lab;
@@ -10,7 +11,7 @@ public:
 	Posicion(Laberinto* _lab, int _x, int _y);
 	void Dibujar();
 	bool esValida();
-	char getTipo();
+	virtual char getTipo() = 0;
 	int getX();
 	int getY();
 };

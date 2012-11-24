@@ -15,15 +15,75 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="winthread.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="winbgi.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="misc.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="palette.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dibutil.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="drawing.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="file.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bgiout.cxx">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Circulo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangulo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tablero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Interfaz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Laberinto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pared.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Posicion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Circulo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Interfaz.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Camino.h">
+    <ClInclude Include="Laberinto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pared.h">
@@ -32,8 +92,29 @@
     <ClInclude Include="Posicion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Laberinto.h">
+    <ClInclude Include="Rectangulo.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablero.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="winbgi.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="winbgim.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="winbgitypes.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dibapi.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dibutil.h">
+      <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
