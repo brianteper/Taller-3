@@ -5,6 +5,7 @@ using namespace std;
 
 void main()
 {
-	Interfaz i;
+	Interfaz* i = new Interfaz();
+	delete i;
 	getchar();
 }

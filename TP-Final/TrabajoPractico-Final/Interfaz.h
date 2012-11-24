@@ -2,14 +2,12 @@
 #define INTERFAZ_H
 
 #include "Laberinto.h"
-#include "Modograf.h"
 #include "Archivo.h"
 
 class Interfaz {
 private:
 	Laberinto	*_lab;
 	Archivo		*_arch;
-	Modograf	*_mg;
 	FILE		*_ArchE;
 	FILE		*_ArchS;
 	char		_opcion;

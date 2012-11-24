@@ -7,7 +7,6 @@ using namespace std;
 Interfaz::Interfaz(){
 	_opcion='\0';
 	_opcion2='\0';
-	_mg=NULL;
 	_ArchE=NULL;
 	_ArchS=NULL;
 	_arch=new Archivo;
@@ -27,12 +26,12 @@ Interfaz::~Interfaz(){
 		delete _arch;
 	if(_lab)
 		delete _lab;
-	if(_mg)
-		delete _mg;
 }
 
 void Interfaz::Menu()
 {
+	initwindow(800, 700, "Laberinto");
+
 	do
 	{
 		cout<<"1. Para leer un laberinto desde el disco.\n";
@@ -68,9 +67,6 @@ void Interfaz::SubMenu()
 		cin>>_opcion2;
 		if(_opcion2!='0'&&(_opcion2=='1')||(_opcion2=='2')||(_opcion2=='3'))
 		{
-			if(_mg)delete _mg;
-			_mg=new Modograf("..\\TP FINAL 2010");
-
 			if(_opcion=='1')
 			{
 				_arch->AbrirArchLectura(_ArchE);
