@@ -30,12 +30,14 @@ Laberinto::Laberinto()
 
 Laberinto::~Laberinto()
 {
-	if(_texto)delete[]_texto;
+	if(_texto)
+		delete[]_texto;
 	for(_f=0;_f<ALTO_LAB;_f++)
 	{
 		for(_c=0;_c<ANCHO_LAB;_c++)
 		{
-			if(_mapa[_f][_c]) delete _mapa[_f][_c];
+			if(_mapa[_f][_c])
+				delete _mapa[_f][_c];
 		}
 	}
 }
@@ -71,12 +73,12 @@ void Laberinto::MostrarTexto()
 
 void Laberinto::MostrarTextoSalida()
 {
-	outtextxy(250,400,"YOU WIN!");
+	outtextxy(250,400,"Ganaste!");
 }
 
 void Laberinto::MostrarTextoSinSalida()
 {
-	outtextxy(250,400,"GAME OVER");
+	outtextxy(250,400,"Perdiste!");
 }
 
 void Laberinto::CargarFijo(Laberinto*l,int mapaTexto[][ANCHO_LAB])
