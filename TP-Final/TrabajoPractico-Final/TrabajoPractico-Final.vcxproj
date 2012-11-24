@@ -26,7 +26,6 @@
     <ClCompile Include="palette.cxx" />
     <ClCompile Include="Pared.cpp" />
     <ClCompile Include="Rectangulo.cpp" />
-    <ClCompile Include="Tablero.cpp" />
     <ClCompile Include="text.cxx" />
     <ClCompile Include="winbgi.cxx" />
     <ClCompile Include="winthread.cxx" />
@@ -34,6 +33,7 @@
   <ItemGroup>
     <ClInclude Include="Camino.h" />
     <ClInclude Include="Circulo.h" />
+    <ClInclude Include="Comun.h" />
     <ClInclude Include="dibapi.h" />
     <ClInclude Include="dibutil.h" />
     <ClInclude Include="graphics.h" />
@@ -42,7 +42,6 @@
     <ClInclude Include="Pared.h" />
     <ClInclude Include="Posicion.h" />
     <ClInclude Include="Rectangulo.h" />
-    <ClInclude Include="Tablero.h" />
     <ClInclude Include="winbgi.h" />
     <ClInclude Include="winbgim.h" />
     <ClInclude Include="winbgitypes.h" />

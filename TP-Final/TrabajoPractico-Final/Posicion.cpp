@@ -3,21 +3,15 @@
 
 class Laberinto;
 Posicion::Posicion(Laberinto* _lab, int _x, int _y){
-
-}
-
-void Posicion::Dibujar(){
-
-}
-
-bool Posicion::esValida(){
-	return false;
+	lab = _lab;
+	x = _x;
+	y = _y;
 }
 
 int Posicion::getX(){
-	return 0;
+	return x;
 }
 
 int Posicion::getY(){
-	return 0;
+	return y;
 }

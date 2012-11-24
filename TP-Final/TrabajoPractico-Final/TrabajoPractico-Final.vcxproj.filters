@@ -51,9 +51,6 @@
     <ClCompile Include="Rectangulo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tablero.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -95,9 +92,6 @@
     <ClInclude Include="Rectangulo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tablero.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="winbgi.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
@@ -115,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="dibutil.h">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Comun.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
