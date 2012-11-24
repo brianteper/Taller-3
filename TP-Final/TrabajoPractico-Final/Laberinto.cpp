@@ -68,17 +68,17 @@ void Laberinto::Limpiar()
 void Laberinto::MostrarTexto()
 {
 	setcolor(GREEN);
-	outtextxy(250,40,_texto);
+	outtextxy(500,10,_texto);
 }
 
 void Laberinto::MostrarTextoSalida()
 {
-	outtextxy(250,400,"Ganaste!");
+	outtextxy(500,600,"Ganaste!");
 }
 
 void Laberinto::MostrarTextoSinSalida()
 {
-	outtextxy(250,400,"Perdiste!");
+	outtextxy(500,600,"Perdiste!");
 }
 
 void Laberinto::CargarFijo(Laberinto*l,int mapaTexto[][ANCHO_LAB])
@@ -108,7 +108,7 @@ void Laberinto::CargarFijo(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 			_left=_right;
 			_right=_left+15;
 		}
-		cout<<"\n";
+		cout<<endl;
 		_top=_bottom;
 		_bottom=_bottom+15;
 	}

@@ -17,10 +17,10 @@ Archivo::~Archivo()
 int Archivo::AbrirArchLectura(FILE *&Arch)
 {
 
-	Arch=fopen("C:\\lab.txt","rt");
+	Arch=fopen("C:\\laberinto.txt","rt");
 	if(Arch==NULL)
 	{
-		cout<<"No se pudo abrir el Archivo de Entrada.\n";
+		cout<<"No se pudo abrir el Archivo de Entrada."<<endl;
 		return 0;
 	}
 	else
@@ -32,10 +32,10 @@ int Archivo::AbrirArchLectura(FILE *&Arch)
 
 int Archivo::AbrirArchEscritura(FILE *&Arch)
 {
-	Arch=fopen("c:\\labNuevo.txt","wt");
+	Arch=fopen("c:\\laberintoNuevo.txt","wt");
 	if(Arch==NULL)
 	{
-		cout<<"No se pudo abrir el Archivo de Salida.\n";
+		cout<<"No se pudo abrir el Archivo de Salida."<<endl;
 		return 0;
 	}
 	else

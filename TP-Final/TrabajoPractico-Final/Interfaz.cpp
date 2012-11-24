@@ -30,14 +30,13 @@ Interfaz::~Interfaz(){
 
 void Interfaz::Menu()
 {
-	initwindow(800, 700, "Laberinto");
-
 	do
 	{
-		cout<<"1. Para leer un laberinto desde el disco.\n";
-		cout<<"2. Para generar un laberinto al azar.\n";
-		cout<<"3. Para guardar el laberinto generado(luego de haber generado un laberinto).\n";
-		cout<<"4. Para salir.\n";
+		system("cls");
+		cout<<"1. Para leer un laberinto desde el disco."<<endl;
+		cout<<"2. Para generar un laberinto al azar."<<endl;
+		cout<<"3. Para guardar el laberinto generado(luego de haber generado un laberinto)."<<endl;
+		cout<<"4. Para salir."<<endl;
 		cout<<"Ingrese una opcion:";
 
 		cin>>_opcion;
@@ -60,14 +59,18 @@ void Interfaz::SubMenu()
 {
 	do
 	{
-		cout<<"1. Para recorrer el laberinto utilizando el metodo 1(Derecha, arriba y abajo).\n";
-		cout<<"2. Para recorrer el laberinto utilizando el metodo 2(Arriba, derecha y abajo).\n";
-		cout<<"3. Para recorrer el laberinto utilizando el metodo 3(Abajo, arriba y derecha).\n";
-		cout<<"0. Para volver al menu principal\n";
+		system("cls");
+		cout<<"1. Para recorrer el laberinto utilizando el metodo 1 (Derecha, Arriba y Abajo)."<<endl;
+		cout<<"2. Para recorrer el laberinto utilizando el metodo 2 (Arriba, Derecha y Abajo)."<<endl;
+		cout<<"3. Para recorrer el laberinto utilizando el metodo 3 (Abajo, Arriba y Derecha)."<<endl;
+		cout<<"0. Para volver al menu principal"<<endl;
 		cout<<"Ingrese una opcion:";
 		cin>>_opcion2;
+
 		if(_opcion2!='0'&&(_opcion2=='1')||(_opcion2=='2')||(_opcion2=='3'))
 		{
+			initwindow(1000, 700, "Laberinto");
+
 			if(_opcion=='1')
 			{
 				Leer();
@@ -79,7 +82,7 @@ void Interfaz::SubMenu()
 				_lab->CargarRandom(_lab,_mapaTexto);
 				_lab->Recorrer(_opcion2);
 			}
-			cout<<"Presione una tecla para continuar.\n";
+			cout<<endl<<"Presione una tecla para continuar."<<endl;
 			cin.get();
 			_lab->Limpiar();
 		}
@@ -92,7 +95,7 @@ void Interfaz::Guardar(){
 	{
 		_lab->ContenidoAString(_ArchS,_mapaTexto);
 		_arch->CerrarArch(_ArchS);
-		cout<<"El archivo se guardo correctamente!\n";
+		cout<<"El archivo se guardo correctamente!"<<endl;
 	}
 }
 

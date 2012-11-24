@@ -21,8 +21,8 @@ void Camino::CambiarEstado(Estado nuevoEstado){
 
 void Camino::Dibujar(){
 	_pc=new Circulo(
-	_xInicial+(LADO*getx()),
-	_yInicial+(LADO*gety()),
+	_xInicial+(LADO*getX()),
+	_yInicial+(LADO*getY()),
 	RADIO
 	);
 	if(_estado==VISITADO)

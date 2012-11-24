@@ -9,10 +9,10 @@ Pared::Pared(Laberinto* lab, int x, int y):Posicion(lab, x, y){
 	_bottom=95;
 	_pr=NULL;
 	_pr=new Rectangulo(
-	_left+(LADO*getx()),
-	_top+(LADO*gety()),
-	_right+(LADO*getx()),
-	_bottom+(LADO*gety())
+	_left+(LADO*getX()),
+	_top+(LADO*getY()),
+	_right+(LADO*getX()),
+	_bottom+(LADO*getY())
 	);
 }
 
