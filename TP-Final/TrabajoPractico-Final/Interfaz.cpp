@@ -69,17 +69,19 @@ void Interfaz::SubMenu()
 
 		if(_opcion2!='0'&&(_opcion2=='1')||(_opcion2=='2')||(_opcion2=='3'))
 		{
-			initwindow(1000, 700, "Laberinto");
+			initwindow(1000, 650, "Laberinto");
 
 			if(_opcion=='1')
 			{
 				Leer();
 				_lab->CargarFijo(_lab, _mapaTexto);
+				refreshallbgi();
 				_lab->Recorrer(_opcion2);
 			}
 			if(_opcion=='2')
 			{
 				_lab->CargarRandom(_lab,_mapaTexto);
+				refreshallbgi();
 				_lab->Recorrer(_opcion2);
 			}
 			cout<<endl<<"Presione una tecla para continuar."<<endl;
