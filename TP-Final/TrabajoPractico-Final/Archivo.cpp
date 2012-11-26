@@ -16,11 +16,10 @@ Archivo::~Archivo()
 
 int Archivo::AbrirArchLectura(FILE *&Arch)
 {
-
-	Arch=fopen("C:\\laberinto.txt","rt");
+	Arch=fopen(RUTA,"rt");
 	if(Arch==NULL)
 	{
-		cout<<"No se pudo abrir el Archivo de Entrada."<<endl;
+		cout<<"ERROR NO SE PUDO ABRIR EL ARCHIVO DE ENTRADA: "<<RUTA<<endl;
 		return 0;
 	}
 	else
@@ -32,10 +31,10 @@ int Archivo::AbrirArchLectura(FILE *&Arch)
 
 int Archivo::AbrirArchEscritura(FILE *&Arch)
 {
-	Arch=fopen("c:\\laberintoNuevo.txt","wt");
+	Arch=fopen(RUTA,"wt");
 	if(Arch==NULL)
 	{
-		cout<<"No se pudo abrir el Archivo de Salida."<<endl;
+		cout<<"ERROR NO SE PUDO ABRIR EL ARCHIVO DE SALIDA:"<<RUTA<<endl;
 		return 0;
 	}
 	else
@@ -46,7 +45,9 @@ int Archivo::AbrirArchEscritura(FILE *&Arch)
 
 void Archivo::CerrarArch(FILE*&Arch)
 {
-	fclose(Arch);
+	if (Arch){
+		fclose(Arch);
+	}
 }
 
 void Archivo::Parser(FILE*&Arch,int mapaTexto[][ANCHO_LAB])

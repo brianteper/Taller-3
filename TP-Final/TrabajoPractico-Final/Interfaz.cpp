@@ -60,16 +60,20 @@ void Interfaz::SubMenu()
 	do
 	{
 		system("cls");
+		cout<<"-------------------------------------------------------------------------------"<<endl;
+		cout << "                         MENU TIPO DE RECORRIDO " << endl;
+		cout<<"-------------------------------------------------------------------------------"<<endl;
 		cout<<"1. Para recorrer el laberinto utilizando el metodo 1 (Derecha, Arriba y Abajo)."<<endl;
 		cout<<"2. Para recorrer el laberinto utilizando el metodo 2 (Arriba, Derecha y Abajo)."<<endl;
 		cout<<"3. Para recorrer el laberinto utilizando el metodo 3 (Abajo, Arriba y Derecha)."<<endl;
 		cout<<"0. Para volver al menu principal"<<endl;
+		cout<<"-------------------------------------------------------------------------------"<<endl;
 		cout<<"Ingrese una opcion:";
 		cin>>_opcion2;
 
 		if(_opcion2!='0'&&(_opcion2=='1')||(_opcion2=='2')||(_opcion2=='3'))
 		{
-			initwindow(1000, 650, "Laberinto");
+			initwindow(700, 650, "Laberinto");
 
 			if(_opcion=='1')
 			{
@@ -102,7 +106,11 @@ void Interfaz::Guardar(){
 }
 
 void Interfaz::Leer(){
-	_arch->AbrirArchLectura(_ArchE);
-	_arch->Parser(_ArchE,_mapaTexto);
-	_arch->CerrarArch(_ArchE);
+	if (_arch->AbrirArchLectura(_ArchE) == 1){
+		_arch->Parser(_ArchE,_mapaTexto);
+		_arch->CerrarArch(_ArchE);
+	}else{
+		cout<<"ERROR NO EXISTE EL ARCHIVO DE ENTRADA: "<<RUTA<<endl;
+		cin.get();
+	}
 }

@@ -26,6 +26,9 @@ Laberinto::Laberinto()
 	_ingreso=false;
 	_entrada=false;
 	_salida=false;
+	t_inicio=0;
+	t_fin=0;
+	t_total=0;
 }
 
 Laberinto::~Laberinto()
@@ -50,7 +53,7 @@ void Laberinto::Limpiar()
 	_salida=false;
 	_x=1;
 
-	cleardevice();
+	closegraph();
 
 	for (int _f=0;_f<ALTO_LAB;_f++)
 	{
@@ -68,17 +71,17 @@ void Laberinto::Limpiar()
 void Laberinto::MostrarTexto()
 {
 	setcolor(GREEN);
-	outtextxy(500,10,_texto);
+	outtextxy(300,10,_texto);
 }
 
 void Laberinto::MostrarTextoSalida()
 {
-	outtextxy(500,600,"Ganaste!");
+	outtextxy(300,600,"Ganaste!");
 }
 
 void Laberinto::MostrarTextoSinSalida()
 {
-	outtextxy(500,600,"Perdiste!");
+	outtextxy(300,600,"Perdiste!");
 }
 
 void Laberinto::CargarFijo(Laberinto*l,int mapaTexto[][ANCHO_LAB])
@@ -96,14 +99,10 @@ void Laberinto::CargarFijo(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 			{
 				_mapa[_f][_c]=new Pared(l,_c,_f);
 				_mapa[_f][_c]->Dibujar();
-				/*Para testear la creación de los objetos
-				cout<<_mapa[_f][_c]->getTipo();*/
 			}
 			else
 			{
 				_mapa[_f][_c]=new Camino(l,_c,_f);
-				/*Para testear la creación de los objetos
-				cout<<_mapa[_f][_c]->getTipo();*/
 			}
 			_left=_right;
 			_right=_left+15;
@@ -249,7 +248,6 @@ void Laberinto::CargarRandom(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 
 void Laberinto::ContenidoAString(FILE *&Arch,int mapaTexto[][ANCHO_LAB]) 
 {
-
 	for(int _f=0;_f<ALTO_LAB;_f++)
 	{
 		for(int _c=0;_c<ANCHO_LAB;_c++)
@@ -268,6 +266,8 @@ void Laberinto::ContenidoAString(FILE *&Arch,int mapaTexto[][ANCHO_LAB])
 
 void Laberinto::Recorrer(char opcion)
 {
+	t_inicio = clock();
+
 	while (!_listo && _x < ALTO_LAB-1)
 	{
 		if (_mapa[_x][0]->esValida()) //Si la posicion es válida encontró una entrada
@@ -275,20 +275,22 @@ void Laberinto::Recorrer(char opcion)
 			switch(opcion)
 			{
 				case '1':
-				_listo = Visitar(_x,0);
-				break;
+					_listo = Visitar(_x,0);
+					break;
 
 				case '2':
-				_listo = Visitar2(_x,0);
-				break;
+					_listo = Visitar2(_x,0);
+					break;
 
 				case '3':
-				_listo = Visitar3(_x,0);
-				break;
+					_listo = Visitar3(_x,0);
+					break;
 			}
 		}
 		_x++;
 	}
+
+	t_fin = clock();
 
 	if(_listo) 
 	{
@@ -298,6 +300,10 @@ void Laberinto::Recorrer(char opcion)
 	{
 		MostrarTextoSinSalida();
 	}
+
+	t_total = (t_fin - t_inicio)/1000;
+	cout<<"Tiempo de recorrido forma "<<opcion<<": "<< t_total <<" Segundos"<<endl;
+
 	cin.get();
 }
 

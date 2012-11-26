@@ -23,6 +23,9 @@ private:
 	int			_random;
 	bool		_entrada;
 	bool		_salida;
+	clock_t		t_inicio;
+	clock_t		t_fin;
+	float		t_total;
 public:
 	Laberinto();
 	~Laberinto();

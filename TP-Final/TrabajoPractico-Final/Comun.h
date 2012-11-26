@@ -21,6 +21,7 @@ using namespace std;
 #define TITULO			"Laberinto"
 #define randomize() (srand( (unsigned)time( NULL )) )
 #define random(range) (rand() % (range))
+#define RUTA "C:\\laberinto_generado.txt"
 
 enum Estado { LIBRE=0, VISITADO, DESCARTADO };
 
