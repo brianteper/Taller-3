@@ -15,7 +15,7 @@ Interfaz::Interfaz(){
 }
 
 Interfaz::~Interfaz(){
-	cout<<"¿Desea guardar el ultimo laberinto generado (S/N)?:";
+	cout<<"\250Desea guardar el ultimo laberinto generado (S/N)?:";
 	cin>>_opcion;
 	_opcion=toupper(_opcion);
 	if(_opcion=='S')
@@ -77,10 +77,11 @@ void Interfaz::SubMenu()
 
 			if(_opcion=='1')
 			{
-				Leer();
-				_lab->CargarFijo(_lab, _mapaTexto);
-				refreshallbgi();
-				_lab->Recorrer(_opcion2);
+				if (Leer()){
+					_lab->CargarFijo(_lab, _mapaTexto);
+					refreshallbgi();
+					_lab->Recorrer(_opcion2);
+				}
 			}
 			if(_opcion=='2')
 			{
@@ -105,12 +106,14 @@ void Interfaz::Guardar(){
 	}
 }
 
-void Interfaz::Leer(){
+bool Interfaz::Leer(){
 	if (_arch->AbrirArchLectura(_ArchE) == 1){
 		_arch->Parser(_ArchE,_mapaTexto);
 		_arch->CerrarArch(_ArchE);
+		return 1;
 	}else{
 		cout<<"ERROR NO EXISTE EL ARCHIVO DE ENTRADA: "<<RUTA<<endl;
 		cin.get();
+		return 0;
 	}
 }

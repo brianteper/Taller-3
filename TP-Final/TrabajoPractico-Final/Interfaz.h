@@ -17,7 +17,7 @@ public:
 	Interfaz();
 	~Interfaz();
 	void Guardar();
-	void Leer();
+	bool Leer();
 	void Menu();
 	void SubMenu();
 };

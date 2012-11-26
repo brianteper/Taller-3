@@ -19,7 +19,6 @@ int Archivo::AbrirArchLectura(FILE *&Arch)
 	Arch=fopen(RUTA,"rt");
 	if(Arch==NULL)
 	{
-		cout<<"ERROR NO SE PUDO ABRIR EL ARCHIVO DE ENTRADA: "<<RUTA<<endl;
 		return 0;
 	}
 	else
