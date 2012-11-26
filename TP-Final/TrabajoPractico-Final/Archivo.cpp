@@ -52,6 +52,8 @@ void Archivo::CerrarArch(FILE*&Arch)
 
 void Archivo::Parser(FILE*&Arch,int mapaTexto[][ANCHO_LAB])
 {
+	_f = 0;
+
 	fgets(_linea,MAXLINEA,Arch);
 	while (!feof(Arch))
 	{
