@@ -53,7 +53,8 @@ void Laberinto::Limpiar()
 	_salida=false;
 	_x=1;
 
-	closegraph();
+	//closegraph();
+	cleardevice();
 
 	for (int _f=0;_f<ALTO_LAB;_f++)
 	{

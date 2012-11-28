@@ -131,17 +131,15 @@ void Interfaz::SubMenu()
 				{
 					if (Leer()){
 						_lab->CargarFijo(_lab, _mapaTexto);
-						refreshallbgi();
 						_lab->Recorrer(_opcion2);
-						salir = true;
+						_lab->Limpiar();
 					}
 				}
 				if(_opcion=='2')
 				{
 					_lab->CargarRandom(_lab,_mapaTexto);
-					refreshallbgi();
 					_lab->Recorrer(_opcion2);
-					salir = true;
+					_lab->Limpiar();
 				}
 			}
 
@@ -153,17 +151,15 @@ void Interfaz::SubMenu()
 				{
 					if (Leer()){
 						_lab->CargarFijo(_lab, _mapaTexto);
-						refreshallbgi();
 						_lab->Recorrer(_opcion2);
-						salir = true;
+						_lab->Limpiar();
 					}
 				}
 				if(_opcion=='2')
 				{
 					_lab->CargarRandom(_lab,_mapaTexto);
-					refreshallbgi();
 					_lab->Recorrer(_opcion2);
-					salir = true;
+					_lab->Limpiar();
 				}
 			}
 
@@ -175,17 +171,15 @@ void Interfaz::SubMenu()
 				{
 					if (Leer()){
 						_lab->CargarFijo(_lab, _mapaTexto);
-						refreshallbgi();
 						_lab->Recorrer(_opcion2);
-						salir = true;
+						_lab->Limpiar();
 					}
 				}
 				if(_opcion=='2')
 				{
 					_lab->CargarRandom(_lab,_mapaTexto);
-					refreshallbgi();
 					_lab->Recorrer(_opcion2);
-					salir = true;
+					_lab->Limpiar();
 				}
 			}
 
