@@ -107,7 +107,7 @@ void Laberinto::CargarFijo(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 			_left=_right;
 			_right=_left+15;
 		}
-		cout<<endl;
+
 		_top=_bottom;
 		_bottom=_bottom+15;
 	}

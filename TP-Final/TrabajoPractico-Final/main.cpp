@@ -7,5 +7,4 @@ void main()
 {
 	Interfaz* i = new Interfaz();
 	delete i;
-	getchar();
 }
