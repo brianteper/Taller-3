@@ -72,17 +72,17 @@ void Laberinto::Limpiar()
 void Laberinto::MostrarTexto()
 {
 	setcolor(GREEN);
-	outtextxy(300,10,_texto);
+	outtextxy(250,10,_texto);
 }
 
 void Laberinto::MostrarTextoSalida()
 {
-	outtextxy(300,600,"Ganaste!");
+	outtextxy(250,600,"RECORRIDO FINALIZADO");
 }
 
 void Laberinto::MostrarTextoSinSalida()
 {
-	outtextxy(300,600,"Perdiste!");
+	outtextxy(230,600,"NO SE ENCONTRO SALIDA");
 }
 
 void Laberinto::CargarFijo(Laberinto*l,int mapaTexto[][ANCHO_LAB])
@@ -96,20 +96,20 @@ void Laberinto::CargarFijo(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 		_right=25;
 		for(_c=0;_c<ANCHO_LAB;_c++)
 		{
-			if(mapaTexto[_f][_c]==0)
+			if(mapaTexto[_f][_c]==0) // SI ES 0 DIBUJA UNA PARED
 			{
 				_mapa[_f][_c]=new Pared(l,_c,_f);
 				_mapa[_f][_c]->Dibujar();
 			}
-			else
+			else // SI NO, DIBUJA UN CAMINO
 			{
 				_mapa[_f][_c]=new Camino(l,_c,_f);
 			}
-			_left=_right;
+			_left=_right;     // NOS CORREMOS A LA DERECHA DEL CUADRADO
 			_right=_left+15;
 		}
 
-		_top=_bottom;
+		_top=_bottom;   // NOS CORREMOS ABAJO
 		_bottom=_bottom+15;
 	}
 }
@@ -119,34 +119,33 @@ void Laberinto::CargarRandom(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 	MostrarTexto();
 	randomize();
 
-	//Borde superior
+	//CARGAMOS EL BORDE SUPERIOR CON PAREDES
 	for(_c=0;_c<ANCHO_LAB;_c++)
 	{
 		_mapa[0][_c] = new Pared(l,_c,0);
 		_mapa[0][_c]->Dibujar();
 	}
 
-	//Borde inferior
+	// CARGAMOS EL BORDE INFERIOR CON PAREDES
 	for(_c=0;_c<ANCHO_LAB;_c++)
 	{
 		_mapa[ALTO_LAB-1][_c] = new Pared(l,_c,ALTO_LAB-1);
 		_mapa[ALTO_LAB-1][_c]->Dibujar();
 	}
 
-	//Borde izquierdo
+	//CARGAMOS EL BORDE IZQUIERDO CON RANDOM
 	for(_f=1;_f<ALTO_LAB-1;_f++)
 	{
 		_random = (rand() % 100) + 1;
 
-		//Obligo a generar entrada
+		//SI NO HAY ENTRADA Y CASI LLEGA AL FINAL, LA GENERAMOS
 		if(!_entrada && _f==ALTO_LAB-2) 
 		{ 
 			_mapa[_f][0] = new Camino(l,0, _f);
 		} 
 		else
 		{
-			//Si arriba hay pared
-			if(_mapa[_f-1][0]->getTipo()=='P')
+			if(_mapa[_f-1][0]->getTipo()=='P') // IF PARA QUE NO HAYA DOS ENTRADAS JUNTAS
 			{
 				if(_random<20)
 				{ 
@@ -160,14 +159,14 @@ void Laberinto::CargarRandom(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 				}
 			}else
 			{
-				//Evito 2 entradas juntas
+				// SI ARRIBA ERA UN CAMINO, GENERO PARED SI O SI
 				_mapa[_f][0] = new Pared(l,0, _f);
 				_mapa[_f][0]->Dibujar();
 			}
 		}
 	}
 
-	//Centro
+		// INTERIOR DEL LABERINTO
 	for(_c=1;_c<ANCHO_LAB-1;_c++)
 	{
 		for(_f=1; _f<ALTO_LAB-1;_f++)
@@ -177,8 +176,9 @@ void Laberinto::CargarRandom(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 			{
 				//Evito generar mucho camino
 				if(_mapa[_f-1][_c]->getTipo()=='C' 
-				&& _mapa[_f-1][_c-1]->getTipo()=='C' 
-				&& _mapa[_f][_c-1]->getTipo()=='C')
+				&& _mapa[_f][_c-1]->getTipo()=='C' 
+				&& _mapa[_f-1][_c-1]->getTipo()=='C' )
+
 				{
 					_mapa[_f][_c] = new Pared(l,_c, _f);
 					_mapa[_f][_c]->Dibujar();
@@ -196,41 +196,44 @@ void Laberinto::CargarRandom(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 		}
 	} 
 
-	//Borde derecho
+
+		// CARGAMOS EL BORDE DERECHO
 	for(_f=1;_f<ALTO_LAB-1;_f++)
 	{
 		_random = (rand() % 100) + 1;
 		
-		//Evito laberinto sin salida
+		//SI NO HAY SALIDA , LA GENERAMOS
 		if(!_salida && _f == ALTO_LAB-2)
 		{
-			//_mapa[_f][ANCHO_LAB-1] = new Camino(l,ANCHO_LAB-1, _f);
+			//_mapa[_f][ANCHO_LAB-1] = new Camino(l,ANCHO_LAB-1, _f);   // NO IMPORTA SI NO HAY SALIDA.
 		}
 		else
 		{
-			//Si a la izquierda hay pared
-			if(_mapa[_f][ANCHO_LAB-2]->getTipo()=='P')
-			{
-				_mapa[_f][ANCHO_LAB-1] = new Pared(l,ANCHO_LAB-1, _f);
-				_mapa[_f][ANCHO_LAB-1]->Dibujar();
-			}
-			else
-			{
+			//if(_mapa[_f][ANCHO_LAB-2]->getTipo()=='P') //											           // NO IMPORTA SI NO HAY SALIDA.
+			//{																									// NO IMPORTA SI NO HAY SALIDA.
+			//	_mapa[_f][ANCHO_LAB-1] = new Pared(l,ANCHO_LAB-1, _f);											// NO IMPORTA SI NO HAY SALIDA.
+			//	_mapa[_f][ANCHO_LAB-1]->Dibujar();																// NO IMPORTA SI NO HAY SALIDA.
+			//}
+			//else
+			//{
 				if(!_salida && _random<20)
 				{
 					_mapa[_f][ANCHO_LAB-1] = new Camino(l,ANCHO_LAB-1, _f);
 					_salida = true;
 				}
-				else
+				else  // SI YA HAY UNA SALIDA GENERAMOS TODAS PAREDES
 				{
 					_mapa[_f][ANCHO_LAB-1] = new Pared(l,ANCHO_LAB-1, _f);
 					_mapa[_f][ANCHO_LAB-1]->Dibujar();
 				}
 			}
 		}
-	}
+	//}
 
-	//Guardo el laberinto generado
+
+
+
+	// PASAMOS TODO LO GENERADO A LA MATRIZ
 	for(int _f=0;_f<ALTO_LAB;_f++)
 	{
 		for(int _c=0;_c<ANCHO_LAB;_c++)
@@ -247,19 +250,20 @@ void Laberinto::CargarRandom(Laberinto*l,int mapaTexto[][ANCHO_LAB])
 	}
 }
 
-void Laberinto::ContenidoAString(FILE *&Arch,int mapaTexto[][ANCHO_LAB]) 
+void Laberinto::ContenidoAString(int mapaTexto[][ANCHO_LAB],FILE *&Arch) 
 {
 	for(int _f=0;_f<ALTO_LAB;_f++)
 	{
 		for(int _c=0;_c<ANCHO_LAB;_c++)
 		{
-			if(_c==ANCHO_LAB-1)
+		// SI NO LLEGO AL FINAL DE LA FILA
+			if(!(_c==ANCHO_LAB-1))
+			{
+				fprintf(Arch,"%d,",mapaTexto[_f][_c]);				
+			}
+			else // SI YA LEGO AL FINAL
 			{
 				fprintf(Arch,"%d\n",mapaTexto[_f][_c]);
-			}
-			else
-			{
-				fprintf(Arch,"%d,",mapaTexto[_f][_c]);
 			}
 		}
 	}
@@ -268,10 +272,9 @@ void Laberinto::ContenidoAString(FILE *&Arch,int mapaTexto[][ANCHO_LAB])
 void Laberinto::Recorrer(char opcion)
 {
 	t_inicio = clock();
-
-	while (!_listo && _x < ALTO_LAB-1)
+	while (!_listo && _x < ALTO_LAB-1) // SI NO ENCONTRE LA SALIDA Y NO LLEGUE AL FINAL
 	{
-		if (_mapa[_x][0]->esValida()) //Si la posicion es válida encontró una entrada
+		if (_mapa[_x][0]->esValida()) 
 		{
 			switch(opcion)
 			{
@@ -303,7 +306,7 @@ void Laberinto::Recorrer(char opcion)
 	}
 
 	t_total = (t_fin - t_inicio)/1000;
-	cout<<"Tiempo de recorrido forma "<<opcion<<": "<< t_total <<" Segundos"<<endl;
+	cout<<"Tiempo de recorrido: "<< t_total <<" segundos"<<endl;
 
 	cin.get();
 }

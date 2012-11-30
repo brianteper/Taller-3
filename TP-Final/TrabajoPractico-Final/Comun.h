@@ -18,7 +18,7 @@ using namespace std;
 #define LADO			15
 #define RADIO			4
 #define MAXLINEA 		255
-#define TITULO			"Laberinto"
+#define TITULO			"LABERINTO RECURSIVO"
 #define randomize() (srand( (unsigned)time( NULL )) )
 #define random(range) (rand() % (range))
 #define RUTA "C:\\laberinto_generado.txt"

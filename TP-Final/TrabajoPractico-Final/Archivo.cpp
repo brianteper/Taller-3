@@ -52,14 +52,15 @@ void Archivo::CerrarArch(FILE*&Arch)
 void Archivo::Parser(FILE*&Arch,int mapaTexto[][ANCHO_LAB])
 {
 	_f = 0;
-
+	// OBTENEMOS LA LINEA COMPLETA
 	fgets(_linea,MAXLINEA,Arch);
 	while (!feof(Arch))
 	{
+		// SEPARAMOS EL CONTENIDO DE LA LINEA CON , 
 		_token = strtok(_linea,",");
 		for(_c=0;_c<ANCHO_LAB;_c++)
 		{
-			mapaTexto[_f][_c] = atoi(_token);
+			mapaTexto[_f][_c] = atoi(_token);  // CONVIERTE EL CARACTER A INT Y LO GUARDA EN LA POSICION DE LA MATRIZ
 			_token = strtok(NULL,",");
 		}
 		_f++;

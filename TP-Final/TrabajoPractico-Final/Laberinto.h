@@ -31,7 +31,7 @@ public:
 	~Laberinto();
 	void CargarFijo(Laberinto*l,int mapaTexto[][ANCHO_LAB]);
 	void CargarRandom(Laberinto*l,int mapaTexto[][ANCHO_LAB]);
-	void ContenidoAString(FILE *&Arch,int mapaTexto[][ANCHO_LAB]);
+	void ContenidoAString(int mapaTexto[][ANCHO_LAB],FILE *&Arch); 
 	void Recorrer(char opcion);
 	void MostrarTexto();
 	void MostrarTextoSalida();
